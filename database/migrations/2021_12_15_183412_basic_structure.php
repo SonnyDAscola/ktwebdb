@@ -20,8 +20,8 @@ class BasicStructure extends Migration
             $table->string('email', 100)->unique();
             $table->string('password', 100);
             $table->text('description')->nullable();
-            $table->boolean('is_admin');
-            $table->boolean('active');
+            $table->boolean('is_admin')->default(false);
+            $table->boolean('active')->default(true);
             $table->rememberToken();
         });
 
@@ -29,14 +29,14 @@ class BasicStructure extends Migration
             $table->id();
             $table->timestamps();
             $table->string('name', 50)->unique();
-            $table->boolean('revisit_client');
+            $table->boolean('revisit_client')->default(false);
         });
 
         Schema::create('tags', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->string('tag', 50)->unique();
-            $table->string('description', 256);
+            $table->string('description', 256)->nullable();
         });
 
         Schema::create('client_tag', function (Blueprint $table) {
