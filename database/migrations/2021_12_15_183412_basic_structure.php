@@ -35,8 +35,8 @@ class BasicStructure extends Migration
         Schema::create('tags', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('name', 50)->unique();
-            $table->boolean('revisit_client');
+            $table->string('tag', 50)->unique();
+            $table->string('description', 256);
         });
 
         Schema::create('client_tag', function (Blueprint $table) {
@@ -53,9 +53,9 @@ class BasicStructure extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tags');
-        Schema::dropIfExists('clients');
         Schema::dropIfExists('client_tag');
+        Schema::dropIfExists('clients');
+        Schema::dropIfExists('tags');
         Schema::dropIfExists('users');
     }
 }
