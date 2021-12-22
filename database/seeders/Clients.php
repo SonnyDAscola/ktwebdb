@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Client;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -26,5 +27,6 @@ class Clients extends Seeder
             'name' => 'Klientin Claus',
             'revisit_client' => true
         ]);
+        Client::factory()->count(12)->create();
     }
 }

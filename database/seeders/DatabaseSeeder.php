@@ -17,7 +17,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             Clients::class,
             Users::class,
-            Tags::class
+            Tags::class,
+            DocumentationsSeeder::class
         ]);
     }
 }

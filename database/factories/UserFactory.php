@@ -4,26 +4,25 @@ namespace Database\Factories;
 
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Hash;
 
 class UserFactory extends Factory
 {
-    /**
-     * The name of the factory's corresponding model.
-     *
-     * @var string
-     */
     protected $model = User::class;
 
-    /**
-     * Define the model's default state.
-     *
-     * @return array
-     */
-    public function definition()
+    public function definition(): array
     {
-        return [
-            'name' => $this->faker->name,
-            'email' => $this->faker->unique()->safeEmail,
+        $this->faker = \Faker\Factory::create('de_DE');
+
+    	return [
+            'name' => $this->faker->name(),
+            'password' => Hash::make('password'),
+            'description' => $this->faker->optional($weight=60)->paragraph(),
+            'active' => $this->faker->boolean(),
+            'email' => $this->faker->safeEmail(),
+            'created_at' => $this->faker->dateTimeBetween('-4 months')
+// 'email', 'description', 'password', 'active', 'is_admin', 'remember_token'
         ];
     }
 }
