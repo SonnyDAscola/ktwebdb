@@ -14,11 +14,11 @@ class ClientTagFactory extends Factory
     public function definition(): array
     {
         $this->faker = \Faker\Factory::create('de_DE');
-        $client_count = count(Client::all());
-        $tag_count = count(Tag::all());
+        $client_id = $this->faker->randomElement(Client::all())->id;
+        $tag_id = $this->faker->randomElement(Tag::all())->id;
     	return [
-            'client_id' => $this->faker->numberBetween(1,$client_count),
-            'tag_id' => $this->faker->numberBetween(1,$tag_count)
+            'client_id' => $client_id,
+            'tag_id' => $tag_id
     	];
     }
 }

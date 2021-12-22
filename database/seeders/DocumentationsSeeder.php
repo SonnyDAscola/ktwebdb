@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Documentation;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -17,6 +18,7 @@ class DocumentationsSeeder extends Seeder
      */
     public function run()
     {
+        Documentation::factory()->count(120)->create();
         DB::table('documentations')->insert([
             'author_id' => 1,
             'advisor_id' => 1,
