@@ -6,7 +6,7 @@ Kontakt: Lars: 0176-78020628
 
 In der Shell im Wurzelverzeichnis zunächst mit 
 
-`composer` die notwendigen Pakete installieren.
+`php8.0-cli ../composer.phar install` die notwendigen Pakete installieren.
 
 In `.env` die korrekten Datenbank-Zugangsdaten eintragen.
 
@@ -15,6 +15,16 @@ führt dazu, dass auch Daten eingetragen werden. Ich habe noch nicht alles
 davon geprüft, war froh, dass es anscheinend gut durch lief.  
 Manchmal gibt es hier einen Fehler, dass ein Wert doppelt eingetragen 
 werden soll. Dann einfach nochmal starten, das ist Glückssache.
+
+Mit `php artisan migrate:refresh --seed` wird die Datenbank verworfen und 
+erneut erstellt.
+
+Die ORM-Objekte laufen jetzt doch, und zwar sind diese in `App\Models\` zu 
+finden.
+
+## TODO
+
+* Die `messages` haben noch keinen Seeder.
 
 ## Fragen
 
