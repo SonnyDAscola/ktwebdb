@@ -17,7 +17,7 @@ class Users extends Seeder
      */
     public function run()
     {
-        User::factory()->count(30)->create();
+        User::factory()->count(15)->create();
 
         DB::table('users')->insert([
             'name' => 'Nutzer Manuel',

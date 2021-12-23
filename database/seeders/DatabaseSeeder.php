@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             Clients::class,
             Users::class,
             Tags::class,
+            TexttypeSeeder::class,
             DocumentationsSeeder::class
         ]);
     }
