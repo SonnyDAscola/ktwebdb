@@ -18,7 +18,7 @@ class Documentation extends Migration
             $table->timestamps();
             $table->foreignId('author_id')->constrained('users')->cascadeOnUpdate()->restrictOnDelete();
             $table->foreignId('advisor_id')->constrained('users')->cascadeOnUpdate()->restrictOnDelete();
-            $table->timestamp('call_started')->nullable(false);
+            $table->timestamp('call_started')->nullable(true);
             $table->integer('call_duration')->default(0);
             $table->foreignId('client_id')->constrained()->cascadeOnUpdate()->cascadeOnDelete();
         });

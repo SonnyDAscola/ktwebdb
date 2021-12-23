@@ -18,7 +18,7 @@ class Message extends Migration
             $table->timestamps();
             $table->foreignId('receiver_id')->constrained('users')->cascadeOnUpdate()->restrictOnDelete();
             $table->foreignId('sender_id')->constrained('users')->cascadeOnUpdate()->restrictOnDelete();
-            $table->timestamp('date_send')->nullable(false);
+            $table->timestamp('date_send')->nullable(true);
             $table->timestamp('date_read')->nullable(true);
             $table->boolean('star_by_receiver')->default(false);
         });
