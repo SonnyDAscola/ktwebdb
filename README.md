@@ -26,6 +26,11 @@ finden.
 
 * Die `messages` haben noch keinen Seeder.
 
+## FAQ - Reinstall & Update
+*  If you want to update your existing packages, please use "composer update -W" 
+   to  update all dependencies as well as packages needed
+*  If you run into problems, try deleting composer.lock file in root
+
 ## Fragen
 
 ### Fragen zu Lumen
